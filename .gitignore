@@ -7,6 +7,16 @@
 *.userosscache
 *.sln.docstates
 
+.idea
+node_modules
+bower
+_bower
+.temp
+.sass-cache
+npm-debug.log
+xunit-output
+wwwroot
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
