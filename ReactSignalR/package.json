@@ -11,8 +11,7 @@
   "license": "ISC",
   "browser": {
     "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-    "signalr": "./Scripts/jquery.signalR-2.2.0.min.js",
-    "hubs": "./Scripts/hubs.js"
+    "signalr": "./Scripts/jquery.signalR-2.2.0.min.js"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

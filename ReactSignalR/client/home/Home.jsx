@@ -6,7 +6,7 @@ import {invoke as messageOfTheDayActionInvoke} from './actions/messageOfTheDayAc
 import {invoke as getCurrentUserActionInvoke} from '../common/security/actions/getCurrentUserAction';
 import {invoke as toastrActionInvoke} from '../common/actions/toastrAction';
 
-import {send} from '../common/api/hubs';
+import {sendMessage} from '../common/api/testHub';
 
 export default class Home extends Component {
 
@@ -29,7 +29,7 @@ export default class Home extends Component {
         <div className="col-lg-12">
           <p>{home.messageOfTheDay}</p>
           <button className="btn btn-primary btn-lg" type="button" onClick={() => {
-              send("Poop!");
+              sendMessage("Poop!");
           }}>Send
           </button>
         </div>

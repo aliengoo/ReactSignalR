@@ -1,19 +1,9 @@
 "use strict";
 
 global.jQuery = require('jquery');
+global.$ = global.jQuery;
 require('bootstrap');
 require('signalr');
-require('hubs');
-
-setTimeout(() => {
-
-  jQuery.connection.hub.start().done(() => {
-    console.log("hub ready");
-  });
-
-}, 1);
-
-import hubs from './common/api/hubs';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -24,8 +14,15 @@ import { Provider } from 'react-redux';
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 import Home from './home/Home.jsx';
 import store from './common/store/store';
+import {start} from './common/api/connection';
 
 var reactContainer = document.getElementById('react-container');
+// TODO : shouldn't have to do this
+setTimeout(() => {
+
+  start();
+
+}, 1111);
 
 var providerRoot = <Provider store={store}>
   <Router history={history()}>
