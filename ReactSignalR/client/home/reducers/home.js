@@ -23,18 +23,19 @@ function messageOfTheDay(previousMessageOfTheDay = null, action) {
   return previousMessageOfTheDay;
 }
 
-export default function home(homeState = {}, action) {
-  let newHomeState = homeState;
+export default function home(previousHome = null, action) {
+  if (action.context === messageOfTheDayContext) {
 
-  if (action.type.startsWith(messageOfTheDayContext)) {
-    newHomeState = Object.assign({}, homeState, {
-      currentUser: currentUser(homeState.currentUser, action),
-      fetching: fetching(homeState.fetching, action),
-      err: err(homeState.err, action),
-      messageOfTheDay: messageOfTheDay(homeState.messageOfTheDay, action)
+    const updates = Immutable.Map({
+      currentUser: currentUser(previousHome.currentUser, action),
+      fetching: fetching(previousHome.fetching, action),
+      err: err(previousHome.err, action),
+      messageOfTheDay: messageOfTheDay(previousHome.messageOfTheDay, action)
     });
+
+    return previousHome.merge(updates);
   }
 
-  return newHomeState;
+  return previousHome;
 }
 

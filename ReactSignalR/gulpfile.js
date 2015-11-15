@@ -19,7 +19,7 @@ gulp.task('browserify', ['lint'], function (done) {
   var args = watchify.args;
   args.extensions = ['.js'];
 
-  watchify(browserify(path.join("./client", "index.jsx"), args), args)
+  watchify(browserify(path.join("./client", "index.js"), args), args)
     .transform(babelify)
     .bundle()
     .on('error', function(err){
@@ -86,6 +86,6 @@ gulp.task('app:css', function () {
 gulp.task('default', ['vendor:icons', 'vendor:css', 'app:css', 'browserify'], function () {
   glp.livereload.listen();
 
-  gulp.watch('./client/**/*.js*', ['browserify']);
+  gulp.watch('./client/**/*.js', ['browserify']);
   gulp.watch('./client/**/*.scss', ['app:css']);
 });

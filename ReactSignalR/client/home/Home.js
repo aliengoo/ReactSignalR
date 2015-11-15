@@ -6,7 +6,7 @@ import {invoke as messageOfTheDayActionInvoke} from './actions/messageOfTheDayAc
 import {invoke as getCurrentUserActionInvoke} from '../common/security/actions/getCurrentUserAction';
 import {invoke as toastrActionInvoke} from '../common/actions/toastrAction';
 
-import {sendMessage} from '../common/api/testHub';
+import {sendMessage} from '../common/hubs/testHub';
 
 export default class Home extends Component {
 

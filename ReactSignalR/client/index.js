@@ -12,21 +12,20 @@ import history from 'history/lib/createHashHistory';
 
 import { Provider } from 'react-redux';
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
-import Home from './home/Home.jsx';
 import store from './common/store/store';
-import {start} from './common/api/connection';
+import {registerAllHubs} from './common/hubs/hubRegistration';
+
+import Home from './home/Home';
+import Customer from './customer/Customer';
+
+registerAllHubs();
 
 var reactContainer = document.getElementById('react-container');
-// TODO : shouldn't have to do this
-setTimeout(() => {
-
-  start();
-
-}, 1111);
 
 var providerRoot = <Provider store={store}>
   <Router history={history()}>
     <Route path="/" component={Home}/>
+    <Route path="/customer" component={Customer}/>
   </Router>
 </Provider>;
 

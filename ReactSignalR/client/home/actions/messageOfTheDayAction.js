@@ -11,5 +11,5 @@ export {
 };
 
 export function invoke() {
-  return invokeAsync("GET", "/api/message-of-the-day", null, null, `${context}.${type}`);
+  return invokeAsync("GET", "/api/message-of-the-day", null, null, type, context);
 }

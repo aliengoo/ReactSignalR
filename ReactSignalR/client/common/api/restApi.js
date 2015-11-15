@@ -41,10 +41,11 @@ export function invokePutAsync(url, query, data, actionType) {
   return invokeAsync("PUT", url, query, data, actionType);
 }
 
-export function invokeAsync(method, url, query, data, actionType) {
+export function invokeAsync(method, url, query, data, actionType, actionContext) {
   return (dispatch) => {
     // fetching started
     dispatch({
+      context: actionContext,
       type: actionType,
       data,
       fetching: true
@@ -54,6 +55,7 @@ export function invokeAsync(method, url, query, data, actionType) {
 
     agent(method, url, query, data).then((response) => {
       dispatch({
+        context: actionContext,
         type: actionType,
         err: response.err,
         data: response.data,
@@ -61,6 +63,7 @@ export function invokeAsync(method, url, query, data, actionType) {
       });
     }, (response) => {
       dispatch({
+        context: actionContext,
         type: actionType,
         fetching: false,
         err: response.err
