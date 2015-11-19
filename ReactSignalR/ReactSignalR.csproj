@@ -210,8 +210,12 @@
     <Compile Include="src\Configuration\ApplicationConfiguration.cs" />
     <Compile Include="src\Configuration\CustomDirectRouteProvider.cs" />
     <Compile Include="src\Configuration\IApplicationConfiguration.cs" />
+    <Compile Include="src\Controllers\AuthenticationController.cs" />
+    <Compile Include="src\Controllers\AuthorizeController.cs" />
     <Compile Include="src\Controllers\CurrentUserController.cs" />
     <Compile Include="src\Controllers\MessageOfTheDayController.cs" />
+    <Compile Include="src\Controllers\RegistrationController.cs" />
+    <Compile Include="src\Database\DatabaseHelper.cs" />
     <Compile Include="src\Database\Models\IDocument.cs" />
     <Compile Include="src\Hubs\TestHub.cs" />
     <Compile Include="src\Pagination\Page.cs" />
@@ -223,9 +227,22 @@
     <Compile Include="src\StartUp\StartUpApp.cs" />
     <Compile Include="src\StartUp\StaticContentRegistration.cs" />
     <Compile Include="src\StartUp\WebApiRegistration.cs" />
+    <Compile Include="src\User\Security\Authentication.cs" />
+    <Compile Include="src\User\Security\AuthenticationResult.cs" />
+    <Compile Include="src\User\Security\Authorization.cs" />
+    <Compile Include="src\User\Security\AuthorizationResult.cs" />
     <Compile Include="src\User\CurrentUser.cs" />
+    <Compile Include="src\User\Security\IAuthentication.cs" />
+    <Compile Include="src\User\Security\IAuthorization.cs" />
     <Compile Include="src\User\ICurrentUser.cs" />
     <Compile Include="src\User\AppUser.cs" />
+    <Compile Include="src\User\Security\IRegistration.cs" />
+    <Compile Include="src\User\Security\Models\AuthenticationRequest.cs" />
+    <Compile Include="src\User\Security\Models\RegistrationRequest.cs" />
+    <Compile Include="src\User\Security\Models\UserAccount.cs" />
+    <Compile Include="src\User\Security\Models\UserToken.cs" />
+    <Compile Include="src\User\Security\Registration.cs" />
+    <Compile Include="src\User\Security\RegistrationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\Helpers\" />
